@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "130940061760",
+    "firebase_url": "https://tekno-7c6bf.firebaseio.com",
+    "project_id": "tekno-7c6bf",
+    "storage_bucket": "tekno-7c6bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130940061760:android:13c1c40b99245324",
+        "android_client_info": {
+          "package_name": "com.example.singgih.smart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130940061760-d9mbvl8rc3ovlilf5cjd6o8mi2etb7ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ62RQ1p2W3G8pgj3Int1TDWGKohaRhUQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130940061760:android:766852247cc376bc",
+        "android_client_info": {
+          "package_name": "me.anjas.educationvee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130940061760-gcp2b5b74p7r5lht85o6uesa467cqqcc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.anjas.educationvee",
+            "certificate_hash": "ffb34ea737899ba5b7dd880f174a6adb44594e39"
+          }
+        },
+        {
+          "client_id": "130940061760-d9mbvl8rc3ovlilf5cjd6o8mi2etb7ka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ62RQ1p2W3G8pgj3Int1TDWGKohaRhUQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130940061760-d9mbvl8rc3ovlilf5cjd6o8mi2etb7ka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

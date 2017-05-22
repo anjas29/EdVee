@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Ed-V</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="soilmosture">
+        "Soil Moisture sensor adalah sensor yang dapat mendeteksi kelembaban tanah. Ini versi terbarunya. Sensor ini sangat sederhana, tetapi sangat ideal untuk memantau kelembaban taman kota, atau tingkat air pada tanaman pekarangan rumah Anda. Sensor ini terdiri dua probe untuk melewatkan arus melalui tanah, kemudian membaca resistansinya untuk mendapatkan tingkat kelembaban. Semakin banyak air membuat tanah lebih mudah menghantarkan listrik (resistansi kecil), sedangkan tanah yang kering sangat sulit menghantarkan listrik (resistansi besar).\n\n"
+
+        "Sensor ini sangat membantu untuk menginformasikan tingkat kelembaban pada tanaman atau memantau kelembaban tanah di kebun. IO Expansion Shield adalah shield yang sempurna untuk menghubungkan Sensor dengan Arduino.\n\n"
+
+        "Spesifikasi:\n"
+        "• Power supply: 3.3v or 5v\n"
+        "• Output voltage signal: 0~4.2v\n"
+        "• Current: 35mA\n\n"
+        "Pin definition:\n"
+        "• Analog output(Blue wire)\n"
+        "• GND(Black wire)\n"
+        "• Power(Red wire)\n"
+        "• Size: 60x20x5 cm mm\n"
+    </string>
+    <string name="lm35">
+        "Sensor suhu diperlukan untuk menginformasikan sinyal keluaran sebagai umpan-balik pada kontroler. Sensor temperatur jenis LM35 merupakan sensor dalam bentuk rangkaian terpadu yang memiliki kepresisian, dimana tegangan keluarannya linier dan bergantung kepada temperatur dalam satuan derajat celcius. LM35 merupakan sensor temperatur yang linier dikalibrasi dalam derajat celcius, sebagai pengguna tidak memerlukan pengurangan konstanta kelvin untuk memperoleh nilai dalam derajat celcius. Juga tidak memerlukan rangkaian luar untuk kalibrasi atau penyesuaian untuk memperoleh ketelitian secara tipikal kurang lebih 0.25 derajat celcius pada temperatur ruangan, dan secara keseluruhan kurang lebih 0.75 derajat celcius pada temperatur antara -50 sampai 150 derajat celcius.\n\n"
+        "Spesifikasi:\n"
+        "• Terkalibrasi secara langsung dalam derajat celcius.\n"
+        "• Keluaran linier 10.0mV/derajat celcius.\n"
+        "• Ketelitian dijamin 0.5 derajat celcius pada temperatur 25 derajat celcius.\n"
+        "• Bekerja pada temperatur antara -50 sampai 150 derajat celcius.\n"
+        "• Disiapkan sebagai aplikasi remote.\n"
+        "• Tegangan operasi antara 4 sampai 20V\n"
+        "• Arus drain lebih kecil dari 60 mikro Ampere.\n"
+        "• Pemanasan sendiri sangat rendah yaitu 0.08 derajat celcius dalam udara.\n"
+        "• Secara tipikal ketidak linieran sebesar 0.25 derajat celcius.\n"
+        "• Impedansi output 0.1 Ohm untuk beban 1 mA.\n"
+    </string>
+    <string name="dht11" translatable="false">
+        "DHT11 adalah sensor digital yang dapat mengukur suhu dan kelembaban udara di sekitarnya. Sensor ini sangat mudah digunakan bersama dengan Arduino. Memiliki tingkat stabilitas yang sangat baik serta fitur kalibrasi yang sangat akurat. Koefisien kalibrasi disimpan dalam OTP program memory, sehingga ketika internal sensor mendeteksi sesuatu, maka module ini menyertakan koefisien tersebut dalam kalkulasinya. DHT11 termasuk sensor yang memiliki kualitas terbaik, dinilai dari respon, pembacaan data yang cepat, dan kemampuan anti-interference. Ukurannya yang kecil, dan dengan transmisi sinyal hingga 20 meter, membuat produk ini cocok digunakan untuk banyak aplikasi-aplikasi pengukuran suhu dan kelembaban.\n\n"
+        "Spesifikasi:\n"
+        "• Supply Voltage: +5 V\n"
+        "• Temperature range : 0-50 °C error of ± 2 °C\n"
+        "• Humidity : 20-90% RH ± 5% RH error\n"
+        "• Interface : Digital\n"
+    </string>
+    <string name="ldr">
+        "LDR (Light Dependent Resistor), ialah jenis resistor yang berubah hambatannya karena pengaruh cahaya. Bila cahaya gelap nilai tahanannya semakin besar, sedangkan cahayanya terang nilainya menjadi semakin kecil.\n"
+    </string>
+    <string name="ultrasonic">
+        "Sensor HC-SR04 adalah sensor pengukur jarak berbasis gelombang ultrasonik. Prinsip kerja sesnsor ini pirip dengan radar ultrasonik. Gelombang ultrasonik di pancarkan kemudian di terima balik oleh receiver ultrasonik. Jarak antara waktu pancar dan waktu terima adalah representasi dari jarak objek. Sensor ini cocok untuk aplikasi elektronik yang memerlukan deteksi jarak termasuk untuk sensor pada robot.\n\n"
+
+        "Spesifikasi:\n"
+        "• Jangkauan deteksi: 2cm sampai kisaran 400 -500cm\n"
+        "• Sudut deteksi terbaik adalah 15 derajat\n"
+        "• Tegangan kerja 5V DC\n"
+        "• Resolusi 1cm\n"
+        "• Frekuensi Ultrasonik 40 kHz\n"
+        "• Dapat dihubungkan langsung ke kaki mikrokontroler\n"
+    </string>
+    <string name="langkah_kerja">
+        "Hubungkan:\n"
+        "• Pin VCC LM35 – Pin VCC Arduino\n"
+        "• Pin Data LM35 - Pin A0 Arduino\n"
+        "• Pin GND LM35 – Pin GND Arduino\n"
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="about_nama">ED-V (VOCATIONAL EDUCATION): MEDIA PEMBELAJARAN SENSOR DAN AKTUATOR BERBANTUAN INTERNET OF THINGS (IOT) DENGAN GRAPHICAL USER INTERFACE (GUI) MENGGUNAKAN SMARTPHONE ANDROID DALAM PENINGKATAN KOMPETENSI LULUSAN PENDIDIKAN VOKASIONAL BIDANG KEAHLIAN OTOMASI INDUSTRI </string>
+    <string name="about_sasaran">ED-V merupakan aplikasi perangkat lunak yang bekerja pada smartphone Android. ED-V ditujukan untuk pelajar, pendidik, khususnya bidang pendidikan vokasi, program keahlian elektronika, informatika, hingga otomasi industri.</string>
+    <string name="about_manfaat">pemprograman Bahasa C yang digunakan untuk membangun embedded system, 3) menggunakan aplikasi ED-V sebagai simulasi embedded system berbasis IoT. </string>
+    <string name="about_deskripsi">Indonesia merupakan Negara terbesar keempat di dunia dengan jumlah penduduk mencapai 249,9 juta pada 2013 (Bank Dunia, 2013). Persaingan bursa tenaga kerja juga semakin meningkat, sedangkan pemberlakuan pasar bebas ASEAN telah dimulai. Sumber daya manusia (SDM) Indonesia harus mampu berkompetisi dalam dunia internasional. Namun, kesadaran masyarakat tentang pendidikan masih kurang. Menurut data dari kelurahan Kota Baru perjanuari 2017, hanya 2 orang yang melanjutkan sampai ke S1 dan 3 orang yang melanjutkan kejenjang Diploma. Sumber daya manusia harus diciptakan dan dilatih untuk mempunyai kompetensi yang baik agar bisa bersaing dalam dunia global. Internet of things (IoT) merupakan teknologi yang memungkinkan segala sesuatu dapat dikendalikan melalui koneksi internet. Sehingga diperlukan suatu upaya untuk menyiapkan SDM yang mampu menguasai teknologi IoT melalui media pembelajaran berbasis teknologi. Penelitian ini menggunakan metode Research and Development (RnD). ED-V sebagai media pembelajaran sensor dan actuator menggunakan kendali terprogram berbasis IoT telah diujikan dan dinyatakan layak tanpa syarat. </string>
+    <string name="about_future">ED-V merupakan media pembelajaran sensor dan actuator menggunakan kendali terprogram berbasis IoT. ED-V memiliki 3 sub system utama yaitu software android, hardware dan system transmisi data berbasis IoT. ED-V dapat menjadi bentuk miniature simulasi sistem otomasi industri berbasis IoT. ED-V dilengkapi perangkat belajar berupa sensor LDR, Sensor SR-04, Relay, WiFi Module ESP8266, dan chip mikrokontroller ATMega328 sebagai hardware pelengkap. ED-V merupakan dilengkapi dengan fitur interfacing melelaui smartphone Android, dan modul pembelajaran materi teknologi otomasi industri dan IoT yang terdapat dalam aplikasi ED-V. </string>
+    <string name="about_fitur">
+        "• Belajar: Menu ini berisi opsi materi belajar berupa materi Sensor, actuator, kendali terprogram, dan Internet of Things\n"
+        "• Modul Pembelajaran: Merakit IoT embedded system, yang berisi tentang tutorial merakit embedded system berbasis IoT menggunakan ED-V.\n"
+        "• Coba ED-V IoT: Aplikasi interfacing dan monitoring data sensor berbasis IoT.\n"
+    </string>
+</resources>
