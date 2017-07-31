@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -33,7 +32,6 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 import com.truizlop.fabreveallayout.FABRevealLayout;
 
@@ -57,8 +55,8 @@ public class InterfaceActivity extends AppCompatActivity {
     TextView tresholdView;
     FABRevealLayout fabRevealLayout;
     Switch switchButton;
-    TextView suhuView, kelembabanView, lm35View;
-    ArcProgress suhuArcView, kelembabanArcView, lm35ArcView;
+    TextView lm35View, pingView, ldrView, pirView;
+    ArcProgress lm35ArcView, pingArchView, ldrArchView, pirArchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +68,15 @@ public class InterfaceActivity extends AppCompatActivity {
         fabRevealLayout = (FABRevealLayout) findViewById(R.id.fab_reveal_layout);
         hideButton = (Button) findViewById(R.id.hideButton);
         switchButton = (Switch) findViewById(R.id.switchView);
-        suhuView = (TextView) findViewById(R.id.suhuView);
-        kelembabanView = (TextView) findViewById(R.id.kelembabanView);
         lm35View = (TextView) findViewById(R.id.lm35View);
-        suhuArcView = (ArcProgress) findViewById(R.id.suhuArcView);
-        kelembabanArcView = (ArcProgress) findViewById(R.id.kelembabanArcView);
-        lm35ArcView = (ArcProgress) findViewById(R.id.lm35ArcView);
+        pingView = (TextView) findViewById(R.id.pingView);
+        ldrView = (TextView) findViewById(R.id.ldrView);
+        pirView = (TextView) findViewById(R.id.pirView);
+
+        lm35ArcView = (ArcProgress) findViewById(R.id.lm35ArchView);
+        pingArchView = (ArcProgress) findViewById(R.id.pingArchView);
+        ldrArchView = (ArcProgress) findViewById(R.id.ldrArchView);
+        pirArchView= (ArcProgress) findViewById(R.id.pirArchView);
 
         chart = (LineChart)findViewById(R.id.chart);
         chart.setNoDataText("Memuat data ...");
@@ -177,49 +178,59 @@ public class InterfaceActivity extends AppCompatActivity {
                 ArrayList<Entry> suhuValues = new ArrayList<Entry>();
                 ArrayList<Entry> kelembabanValues = new ArrayList<Entry>();
                 ArrayList<Entry> lm35Values = new ArrayList<Entry>();
-                LineDataSet dataSetSuhu, dataSetKelembaban, datasetLm35;
+                ArrayList<Entry> pirValues = new ArrayList<Entry>();
+                LineDataSet dataSetSuhu, dataSetKelembaban, datasetLm35, datasetPir;
 
                 int number = 0;
                 for(DataSnapshot object : dataSnapshot.getChildren()){
                     String value = object.getValue().toString();
-                    String [] valueSplit = value.split("_",3);
-                    float suhuValue, kelembabanValue, lm35Value;
+                    String [] valueSplit = value.split("_",4);
+                    float suhuValue, kelembabanValue, lm35Value, pirValue;
                     Log.d("DEBUGS", value);
                     try{
                         Log.d("DEBUGS", valueSplit[0]);
                         suhuValue = Float.parseFloat(valueSplit[0]);
                         kelembabanValue = Float.parseFloat(valueSplit[1]);
                         lm35Value = Float.parseFloat(valueSplit[2]);
+                        pirValue = Float.parseFloat(valueSplit[3]);
                     }catch(Exception e){
                         suhuValue = 0;
                         kelembabanValue = 0;
                         lm35Value = 0;
+                        pirValue = 0;
                     }
 
                     suhuValues.add(new Entry(number, (float) suhuValue));
                     kelembabanValues.add(new Entry(number, (float) kelembabanValue));
                     lm35Values.add(new Entry(number, (float) lm35Value));
+                    pirValues.add(new Entry(number, (float) pirValue));
 
                     number++;
                 }
-                dataSetSuhu = new LineDataSet(suhuValues, "Suhu");
+                dataSetSuhu = new LineDataSet(suhuValues, "LM35");
                 dataSetSuhu.setMode(LineDataSet.Mode.CUBIC_BEZIER);
                 dataSetSuhu.setColor(Color.parseColor("#C3C60C"));
                 dataSetSuhu.setDrawCircleHole(false);
 
-                dataSetKelembaban = new LineDataSet(kelembabanValues, "Kelembaban");
+                dataSetKelembaban = new LineDataSet(kelembabanValues, "PING SR 04");
                 dataSetKelembaban.setMode(LineDataSet.Mode.CUBIC_BEZIER);
                 dataSetKelembaban.setColor(Color.parseColor("#F08080"));
                 dataSetKelembaban.setDrawCircleHole(false);
 
-                datasetLm35 = new LineDataSet(lm35Values, "LM35");
+                datasetLm35 = new LineDataSet(lm35Values, "LDR");
                 datasetLm35.setMode(LineDataSet.Mode.CUBIC_BEZIER);
                 datasetLm35.setColor(Color.parseColor("#B2FF59"));
                 datasetLm35.setDrawCircleHole(false);
 
+                datasetPir = new LineDataSet(pirValues, "PIR");
+                datasetPir.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+                datasetPir.setColor(Color.parseColor("#4A148C"));
+                datasetPir.setDrawCircleHole(false);
+
                 dataSets.add(dataSetSuhu);
                 dataSets.add(dataSetKelembaban);
                 dataSets.add(datasetLm35);
+                dataSets.add(datasetPir);
 
 
                 //set Axis
@@ -262,10 +273,11 @@ public class InterfaceActivity extends AppCompatActivity {
         firebase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                float suhu = Float.parseFloat(dataSnapshot.child("baca_suhu").getValue().toString());
-                float kelembaban = Float.parseFloat(dataSnapshot.child("kelembaban").getValue().toString());
-                float lm35 = Float.parseFloat(dataSnapshot.child("baca_temp").getValue().toString());
-                setCurrentStat(suhu, kelembaban, lm35);
+                float ldr = Float.parseFloat(dataSnapshot.child("ldr").getValue().toString());
+                float ping = Float.parseFloat(dataSnapshot.child("ping sr 04").getValue().toString());
+                float lm35 = Float.parseFloat(dataSnapshot.child("lm35").getValue().toString());
+                float pir = Float.parseFloat(dataSnapshot.child("pir").getValue().toString());
+                setCurrentStat(lm35, ping, ldr, pir);
                 float treshold = Float.parseFloat(dataSnapshot.child("set_treshold").getValue().toString());
                 tresholdView.setText(treshold+"");
                 Toast.makeText(InterfaceActivity.this, "Treshold berhasil diperbaharui.", Toast.LENGTH_SHORT).show();
@@ -284,13 +296,15 @@ public class InterfaceActivity extends AppCompatActivity {
 
     }
 
-    public void setCurrentStat(float suhu, float kelembaban, float lm35){
-        suhuView.setText(suhu +" \u2103");
-        kelembabanView.setText(kelembaban +" %");
+    public void setCurrentStat(float lm35, float ping, float ldr, float pir){
         lm35View.setText(lm35 +" \u2103");
+        pingView.setText(ping +" m");
+        ldrView.setText(ldr +" %");
+        pirView.setText(pir +"");
 
-        suhuArcView.setProgress((int)suhu);
-        kelembabanArcView.setProgress((int)kelembaban);
         lm35ArcView.setProgress((int)lm35);
+        pingArchView.setProgress((int)ping);
+        ldrArchView.setProgress((int)ldr);
+        pirArchView.setProgress((int)pir);
     }
 }

@@ -1,0 +1,132 @@
+<p>#include <Adafruit_Sensor.h></p>
+
+<p>#include <ESP8266WiFi.h><br />
+#include <FirebaseArduino.h></p>
+
+<p>#define FIREBASE_HOST &quot;tekno-7c6bf.firebaseio.com&quot;<br />
+#define FIREBASE_AUTH &quot;T7mZQyoTcJADlO3UV8gcZVx5G4BvwomBowJRVpxp&quot;</p>
+
+<p>//#define WIFI_SSID &quot;Andromax-M2Y-0124&quot;<br />
+//#define WIFI_PASSWORD &quot;asyouwish&quot;</p>
+
+<p>#define WIFI_SSID &quot;Redmi&quot;<br />
+#define WIFI_PASSWORD &quot;qwerty12&quot;</p>
+
+<p>#include &quot;LM35.h&quot; // pin digital yang digunakan<br />
+#define LM35PIN 3V3 // saat ini saya pakai sensor LM35. dan uncomment sensor yang diinginkan <br />
+#define LM35</p>
+
+<p>//#define LM35 </p>
+
+<p>int sensor = A0;<br />
+int lm35= 0;</p>
+
+<p>const int tombol = 5; //pin tombol<br />
+const int led = D0; //pin lled<br />
+const int relay= D3;<br />
+int val=0;</p>
+
+<p>void setup() {<br />
+ Serial.begin(9600);<br />
+ dht.begin();</p>
+
+<p> pinMode (tombol,INPUT_PULLUP);<br />
+ pinMode (led,OUTPUT);<br />
+ pinMode (LED_BUILTIN, OUTPUT);<br />
+ pinMode (relay, OUTPUT);<br />
+ // digitalWrite (relay, LOW);<br />
+ <br />
+ // connect to wifi.<br />
+ WiFi.begin(WIFI_SSID, WIFI_PASSWORD);<br />
+ Serial.print(&quot;connecting&quot;);<br />
+ while (WiFi.status() != WL_CONNECTED) {<br />
+ Serial.print(&quot;.&quot;);<br />
+ delay(500);<br />
+ }<br />
+ Serial.println();<br />
+ Serial.print(&quot;connected: &quot;);<br />
+ Serial.println(WiFi.localIP());<br />
+ <br />
+ Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);<br />
+}<br />
+ int n=0;<br />
+ <br />
+void loop() {<br />
+//===========================================================lm35 main ====> program pembacaan sensor</p>
+
+<p> float x = analogRead(sensor); //dht.readTemperature();<br />
+ float xx= x/9.309; // temp * 0.48828125; <br />
+ float temp = xx+11;<br />
+ //float hum = dht.readHumidity();<br />
+ Serial.print(&quot; temperatur: &quot;);<br />
+ Serial.println(temp);<br />
+//======================================================suhu ============> mode transmisi<br />
+ // set value<br />
+ Firebase.setFloat(&quot;kelembaban&quot;, temp);<br />
+ // handle error<br />
+ if (Firebase.failed()) {<br />
+ Serial.print(&quot;setting /kelembaban failed:&quot;);<br />
+ Serial.println(Firebase.error()); <br />
+ return;<br />
+ }<br />
+ //delay(1000);<br />
+ <br />
+ // update value<br />
+ Firebase.setFloat(&quot;kelembaban&quot;, temp);<br />
+ // handle error<br />
+ if (Firebase.failed()) {<br />
+ Serial.print(&quot;setting /kelembaban failed:&quot;);<br />
+ Serial.println(Firebase.error()); <br />
+ return;<br />
+ }<br />
+ // delay(1000);</p>
+
+<p> // get value <br />
+ Serial.print(&quot;temperatur: &quot;);<br />
+ Serial.println(Firebase.getFloat(&quot;kelembaban&quot;));<br />
+ delay(1000);</p>
+
+<p> // remove value<br />
+ //Firebase.remove(&quot;number&quot;);<br />
+ //delay(1000);</p>
+
+<p>
+//=======================================================automatic tresholt set<br />
+int treshold=0;<br />
+treshold = Firebase.getInt(&quot;set_treshold&quot;);<br />
+Serial.print(&quot;treshold: &quot;); Serial.print(treshold);</p>
+
+<p>if (temp <= treshold)<br />
+ {<br />
+ digitalWrite (led, HIGH);<br />
+ digitalWrite (relay, HIGH);<br />
+ digitalWrite (LED_BUILTIN, HIGH);<br />
+ Serial.println(&quot; = nyala&quot;);<br />
+ // delay(5000);<br />
+ }<br />
+else if (temp >=treshold)<br />
+ {<br />
+ digitalWrite (led, LOW);<br />
+ digitalWrite (relay, LOW);<br />
+ digitalWrite (LED_BUILTIN, LOW);<br />
+ Serial.println(&quot; = mati&quot;);<br />
+ // delay(5000);<br />
+ }<br />
+//=======================================================cek-in</p>
+
+<p> // append a new value to /logs<br />
+ <br />
+ String test = String(temp);//+&quot;_&quot;+String(hum);<br />
+ String name = Firebase.pushString(&quot;record_fungitech&quot;, test);<br />
+ // handle error<br />
+ if (Firebase.failed()) {<br />
+ Serial.print(&quot;pushing /record_fungitech failed:&quot;);<br />
+ Serial.println(Firebase.error());<br />
+ return;<br />
+ }<br />
+ Serial.print(test);<br />
+ Serial.print(&quot;- pushed: /record_fungitech/&quot;);<br />
+ Serial.println(name);<br />
+ Serial.println(&quot;============================================================&quot;);<br />
+ delay(5000);<br />
+}</p>

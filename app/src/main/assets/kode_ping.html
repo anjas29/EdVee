@@ -1,0 +1,28 @@
+<p>// defines pins numbers<br />
+const int trigPin = 2; //D4<br />
+const int echoPin = 0; //D3<br />
+// defines variables<br />
+long duration;<br />
+int distance;<br />
+void setup() {<br />
+pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output<br />
+pinMode(echoPin, INPUT); // Sets the echoPin as an Input<br />
+Serial.begin(9600); // Starts the serial communication<br />
+}<br />
+void loop() {<br />
+// Clears the trigPin<br />
+digitalWrite(trigPin, LOW);<br />
+delayMicroseconds(2);<br />
+// Sets the trigPin on HIGH state for 10 micro seconds<br />
+digitalWrite(trigPin, HIGH);<br />
+delayMicroseconds(10);<br />
+digitalWrite(trigPin, LOW);<br />
+// Reads the echoPin, returns the sound wave travel time in microseconds<br />
+duration = pulseIn(echoPin, HIGH);<br />
+// Calculating the distance<br />
+distance= duration*0.034/2;<br />
+// Prints the distance on the Serial Monitor<br />
+Serial.print(&quot;Distance: &quot;);<br />
+Serial.println(distance);<br />
+delay(2000);<br />
+}</p>

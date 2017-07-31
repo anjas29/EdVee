@@ -158,4 +158,182 @@
         "• Modul Pembelajaran: Merakit IoT embedded system, yang berisi tentang tutorial merakit embedded system berbasis IoT menggunakan ED-V.\n"
         "• Coba ED-V IoT: Aplikasi interfacing dan monitoring data sensor berbasis IoT.\n"
     </string>
+
+    <string name="lm35_kompetensi">
+        Mampu memahami penggunaan Sensor Suhu LM35 yang terhubung dengan Internet of Things
+    </string>
+    <string name="lm35_subkompetensi">
+        "1.Siswa dapat merangkai Sensor Suhu LM35 menggunakan Node MCU\n"
+        "2.Siswa dapat memahami prinsip kerja dari rangkaian Sensor Suhu LM35\n"
+        "3.Siswa dapat mengetahui grafik Sensor Suhu LM35\n"
+        "4.Siswa dapat mengoperasikan sensor dengan menggunakan Internet of Things\n"
+    </string>
+    <string name="lm35_landasanteori">
+        "• Node MCU\n"
+        "• Arduino IDE\n"
+        "• Sensor Suhu LM35\n"
+        "• Firebase\n"
+    </string>
+    <string name="lm35_alatbahan">
+        "1.Komponen Hardware\n"
+        "- Node MCU				: 1 buah\n"
+        "- Sensor Suhu LM35		: 1 buah\n"
+        "- Bread Board/Project Board: 1 buah\n"
+        "- Kabel jumper				: secukupnya\n"
+        "- Kabel micro USB			: 1 buah\n\n"
+        
+        "2.komponen Software\n"
+        "- Arduino IDE\n"
+    </string>
+    <string name="lm35_keselamatankerja">
+        "a. Sebelum praktik mahasiswa harus memahami tujuan dan kompetensi dari praktikum ini.\n"
+        "b. Membaca dan memahami semua langkah kerja dari praktikum ini dengan cermat.\n"
+        "c. Dalam merangkai komponen di project board harus teliti dan berhati hati.\n"
+        "d. Sebelum menghubungkan node MCU ke PC/Laptop sebaiknya di priksakan ke dosen terlebih dahulu.\n"
+    </string>
+    <string name="lm35_latihan">
+        "• Deskripsikan karakteristik sensor LM35 yang digunakan dalam praktikum tersebut.\n\n"
+        "• Buatlah rangkaian dan program sensor LM35 untuk mengukur suhu ruangan dengan rentang suhu -25ºC – 40ºC dengan basis IoT.\n\n"
+        "• Buatlah Grafik kerja sensor LDR pada praktikum tersebut.\n\n"
+    </string>
+    <string name="lm35_langkahkerja">
+        "1. Sambungan rangkaian dibuat sebagai berikut:\n"
+        "\t• Pin 1 dari LM35 masuk ke +3v dari NodeMCU\n"
+        "\t• Pin 2 dari LM35 masuk ke Analog Pin A0 dari NodeMCU\n"
+        "\t• Pin 3 dari LM35 masuk ke Ground Pin (GND) dari NodeMCU\n\n"
+        "2. Buatlah Program dari rangkaian yang telah dibuat menggunakan Arduino IDE. Berikut program yang akan dibuat untuk menjalankan sensor LM35\n"
+    </string>
+
+    <string name="ping_kompetensi">
+        Mampu memahami penggunaan Sensor Ultrasonic HC-SR04 yang terhubung dengan Internet of Things
+    </string>
+    <string name="ping_subkompetensi">
+        "1.Siswa dapat merangkai Sensor Ultrasonic HC-SR04 menggunakan Node MCU\n"
+        "2.Siswa dapat memahami prinsip kerja dari rangkaian Sensor Ultrasonic HC-SR04\n"
+        "3.Siswa dapat mengetahui grafik kerja Sensor Ultrasonic HC-SR04\n"
+        "4.Siswa dapat mengoperasikan sensor dengan menggunakan Internet of Things\n"
+    </string>
+    <string name="ping_landasanteori">
+        "• Node MCU\n"
+        "• Arduino IDE\n"
+        "• Sensor Ultrasonic HC-SR04\n"
+        "• Firebase\n"
+    </string>
+    <string name="ping_alatbahan">
+        "1.Komponen Hardware\n"
+        "- Node MCU				: 1 buah\n"
+        "- Sensor Ultrasonic HC-SR04		: 1 buah\n"
+        "- Bread Board/Project Board: 1 buah\n"
+        "- Kabel jumper				: secukupnya\n"
+        "- Kabel micro USB			: 1 buah\n\n"
+
+        "2.komponen Software\n"
+        "- Arduino IDE\n"
+    </string>
+    <string name="ping_keselamatankerja">
+        "a. Sebelum praktik mahasiswa harus memahami tujuan dan kompetensi dari praktikum ini.\n"
+        "b. Membaca dan memahami semua langkah kerja dari praktikum ini dengan cermat.\n"
+        "c. Dalam merangkai komponen di project board harus teliti dan berhati hati.\n"
+        "d. Sebelum menghubungkan node MCU ke PC/Laptop sebaiknya di priksakan ke dosen terlebih dahulu.\n"
+    </string>
+    <string name="ping_latihan">
+        "• Deskripsikan karakteristik sensor Ultrasonic HC-SR04 yang digunakan dalam praktikum tersebut.\n\n"
+        "• Buatlah rangkaian dan program sensor Ultrasonic HC-SR04 untuk mendeteksi benda hingga jarak 40cm dengan basis IoT.\n\n"
+        "• Buatlah Grafik kerja sensor  pada praktikum tersebut.\n\n"
+    </string>
+    <string name="ping_langkahkerja">
+        "1. Sambungan rangkaian dibuat sebagai berikut:\n"
+        "\t• Pin “Vcc” Sensor HC-SR04 terhubung ke Pin +3.3v NodeMCU\n"
+        "\t• Pin “GND” Sensor HC-SR04 terhubung ke Pin GND NodeMCU\n"
+        "\t• Pin “Trigger” Sensor HC-SR04 terhubung ke NodeMCU Digital I / O D4\n"
+        "\t• Pin “Echo” Sensor HC-SR04 terhubung ke NodeMCU Digital I / O D3\n\n"
+        "2. Buatlah Program dari rangkaian yang telah dibuat menggunakan Arduino IDE.\n"
+    </string>
+
+    <string name="ldr_kompetensi">
+        Mampu memahami penggunaan Sensor LDR yang terhubung dengan Internet of Things
+    </string>
+    <string name="ldr_subkompetensi">
+        "1.Siswa dapat merangkai Sensor LDR menggunakan Node MCU\n"
+        "2.Siswa dapat memahami prinsip kerja dari rangkaian Sensor LDR\n"
+        "3.Siswa dapat mengetahui grafik kerja Sensor LDR\n"
+        "4.Siswa dapat mengoperasikan sensor dengan menggunakan Internet of Things\n"
+    </string>
+    <string name="ldr_landasanteori">
+        "• Node MCU\n"
+        "• Arduino IDE\n"
+        "• Sensor LDR\n"
+        "• Firebase\n"
+    </string>
+    <string name="ldr_alatbahan">
+        "1.Komponen Hardware\n"
+        "- Node MCU				: 1 buah\n"
+        "- Sensor LDR		: 1 buah\n"
+        "- Bread Board/Project Board: 1 buah\n"
+        "- Kabel jumper				: secukupnya\n"
+        "- Kabel micro USB			: 1 buah\n\n"
+
+        "2.komponen Software\n"
+        "- Arduino IDE\n"
+    </string>
+    <string name="ldr_keselamatankerja">
+        "a. Sebelum praktik mahasiswa harus memahami tujuan dan kompetensi dari praktikum ini.\n"
+        "b. Membaca dan memahami semua langkah kerja dari praktikum ini dengan cermat.\n"
+        "c. Dalam merangkai komponen di project board harus teliti dan berhati hati.\n"
+        "d. Sebelum menghubungkan node MCU ke PC/Laptop sebaiknya di priksakan ke dosen terlebih dahulu.\n"
+    </string>
+    <string name="ldr_latihan">
+        "• Deskripsikan karakteristik sensor LDR yang digunakan dalam praktikum tersebut.\n\n"
+        "• Buatlah Rangkaian dan Program sensor LDR untuk menyalakan lampu dengan basis IoT.\n\n"
+        "• Buatlah Grafik kerja sensor LDR pada praktikum tersebut.\n\n"
+    </string>
+    <string name="ldr_langkahkerja">
+        "1. Sambungan rangkaian diatas\n"
+        "2.Buatlah Program dari rangkaian yang telah dibuat menggunakan Arduino IDE. Berikut program yang akan dibuat untuk menjalankan sensor LDR\n"
+    </string>
+
+    <string name="pir_kompetensi">
+        Mampu memahami penggunaan Sensor LDR yang terhubung dengan Internet of Things
+    </string>
+    <string name="pir_subkompetensi">
+        "1.Siswa dapat merangkai Sensor PIRmenggunakan Node MCU\n"
+        "2.Siswa dapat memahami prinsip kerja dari rangkaian Sensor LDR\n"
+        "3.Siswa dapat mengetahui grafik kerja Sensor LDR\n"
+        "4.Siswa dapat mengoperasikan sensor dengan menggunakan Internet of Things\n"
+    </string>
+    <string name="pir_landasanteori">
+        "• Node MCU\n"
+        "• Arduino IDE\n"
+        "• Sensor PIR\n"
+        "• Firebase\n"
+    </string>
+    <string name="pir_alatbahan">
+        "1.Komponen Hardware\n"
+        "- Node MCU				: 1 buah\n"
+        "- Sensor PIR		: 1 buah\n"
+        "- Bread Board/Project Board: 1 buah\n"
+        "- Kabel jumper				: secukupnya\n"
+        "- Kabel micro USB			: 1 buah\n\n"
+
+        "2.komponen Software\n"
+        "- Arduino IDE\n"
+    </string>
+    <string name="pir_keselamatankerja">
+        "a. Sebelum praktik mahasiswa harus memahami tujuan dan kompetensi dari praktikum ini.\n"
+        "b. Membaca dan memahami semua langkah kerja dari praktikum ini dengan cermat.\n"
+        "c. Dalam merangkai komponen di project board harus teliti dan berhati hati.\n"
+        "d. Sebelum menghubungkan node MCU ke PC/Laptop sebaiknya di priksakan ke dosen terlebih dahulu.\n"
+    </string>
+    <string name="pir_latihan">
+        "• Deskripsikan karakteristik sensor PIR yang digunakan dalam praktikum tersebut.\n\n"
+        "• Buatlah rangkaian dan program sensor PIR untuk mendeteksi pergerakan benda maksimal pada jarak 25 cm dengan basis IoT.\n\n"
+        "• Buatlah Grafik kerja sensor PIR pada praktikum tersebut.\n\n"
+    </string>
+    <string name="pir_langkahkerja">
+        "1. Sambungan rangkaian dibuat sebagai berikut:\n"
+        "\t• Pin VCC dari sensor PIR terhubung ke +3v dari NodeMCU\n"
+        "\t• Pin Out dari sensor PIR terhubung ke Pin Digital D7 dari NodeMCU\n"
+        "\t• Pin GND dari PIR terhubung ke Ground Pin (GND) NodeMCU.\n\n"
+        "2.Buatlah Program dari rangkaian yang telah dibuat menggunakan Arduino IDE. Berikut program yang akan dibuat untuk menjalankan sensor LDR.\n"
+    </string>
 </resources>

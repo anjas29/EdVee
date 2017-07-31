@@ -1,0 +1,22 @@
+<p>int Status = 12; // Digital pin D6</p>
+
+<p>int sensor = 13; // Digital pin D7<br />
+void setup() {</p>
+
+<p> pinMode(sensor, INPUT); // declare sensor as input<br />
+ pinMode(Status, OUTPUT); // declare LED as output<br />
+}<br />
+void loop() {</p>
+
+<p> long state = digitalRead(sensor);<br />
+ if(state == HIGH) {<br />
+ digitalWrite (Status, HIGH);<br />
+ Serial.println(&quot;Motion detected!&quot;);<br />
+ delay(1000);<br />
+ }<br />
+ else {<br />
+ digitalWrite (Status, LOW);<br />
+ Serial.println(&quot;Motion absent!&quot;);<br />
+ delay(1000);<br />
+ }<br />
+}</p>
